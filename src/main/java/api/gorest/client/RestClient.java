@@ -12,15 +12,16 @@ import io.restassured.specification.RequestSpecification;
 public class RestClient {
 
 	private static final String BASE_URI = "https://gorest.co.in";
-	private static final String BEARER_TOKEN = "9b9addd5a1760bbe5f636516d785465e6890fbbaf2fa6d4ec1bc5bc71e043a39";
+	private static final String BEARER_TOKEN = "";
 	private static RequestSpecBuilder specBuilder;
 
-	static {
+	public RestClient()
+	{
 		specBuilder = new RequestSpecBuilder();
 	}
 
 	public void addAuthorizationHeader() {
-		specBuilder.addHeader("Authorization", "BEARER" + BEARER_TOKEN);
+		specBuilder.addHeader("Authorization", "Bearer " + BEARER_TOKEN);
 	}
 
 	public void setRequestContentType(String contentType) {
@@ -42,13 +43,13 @@ public class RestClient {
 	}
 
 	private RequestSpecification createRequestSpec() {
-		specBuilder.setBaseUri(BASE_URI).addHeader(BEARER_TOKEN, BASE_URI);
+		specBuilder.setBaseUri(BASE_URI);
 		addAuthorizationHeader();
 		return specBuilder.build();
 	}
 
 	private RequestSpecification createRequestSpec(Map<String, String> headersMp) {
-		specBuilder.setBaseUri(BASE_URI).addHeader(BEARER_TOKEN, BASE_URI);
+		specBuilder.setBaseUri(BASE_URI);
 		addAuthorizationHeader();
 		if (headersMp != null) {
 			specBuilder.addHeaders(headersMp);
@@ -57,7 +58,7 @@ public class RestClient {
 	}
 
 	private RequestSpecification createRequestSpec(Map<String, String> headersMp, Map<String, String> querParams) {
-		specBuilder.setBaseUri(BASE_URI).addHeader(BEARER_TOKEN, BASE_URI);
+		specBuilder.setBaseUri(BASE_URI);
 		addAuthorizationHeader();
 		if (querParams != null) {
 			specBuilder.addQueryParams(querParams);
@@ -66,7 +67,7 @@ public class RestClient {
 	}
 
 	private RequestSpecification createRequestSpec(Object requestBody, String contentType) {
-		specBuilder.setBaseUri(BASE_URI).addHeader(BEARER_TOKEN, BASE_URI);
+		specBuilder.setBaseUri(BASE_URI);
 		addAuthorizationHeader();
 		setRequestContentType(contentType);
 		if (requestBody != null) {
@@ -78,7 +79,7 @@ public class RestClient {
 
 	private RequestSpecification createRequestSpec(Object requestBody, String contentType,
 			Map<String, String> headersMap) {
-		specBuilder.setBaseUri(BASE_URI).addHeader(BEARER_TOKEN, BASE_URI);
+		specBuilder.setBaseUri(BASE_URI);
 		addAuthorizationHeader();
 		setRequestContentType(contentType);
 		if (headersMap != null) {
