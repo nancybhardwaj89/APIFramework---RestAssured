@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-01T12:06:19 IST" name="Default suite" finished-at="2024-07-01T12:06:23 IST" duration-ms="3742">
+    <groups>
+    </groups>
+    <test started-at="2024-07-01T12:06:19 IST" name="Default test" finished-at="2024-07-01T12:06:23 IST" duration-ms="3742">
+      <class name="api.gorest.tests.GetUserTest">
+        <test-method signature="getParticularUserTest()[pri:0, instance:api.gorest.tests.GetUserTest@4d0d9fe7]" started-at="2024-07-01T12:06:19 IST" name="getParticularUserTest" finished-at="2024-07-01T12:06:23 IST" duration-ms="3603" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getParticularUserTest -->
+      </class> <!-- api.gorest.tests.GetUserTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
