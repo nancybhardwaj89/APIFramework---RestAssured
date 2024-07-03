@@ -1,6 +1,7 @@
 package api.gorest.client;
 
 import java.util.Map;
+import java.util.Properties;
 
 import api.gorest.frameworkexceptions.APIFrameworkExceptions;
 import io.restassured.RestAssured;
@@ -11,17 +12,18 @@ import io.restassured.specification.RequestSpecification;
 
 public class RestClient {
 
-	private static final String BASE_URI = "https://gorest.co.in";
-	private static final String BEARER_TOKEN = "";
 	private static RequestSpecBuilder specBuilder;
+	private Properties prop;
+	private String baseURI;
 
-	public RestClient()
-	{
+	public RestClient(Properties prop, String baseURI) {
 		specBuilder = new RequestSpecBuilder();
+		this.prop = prop;
+		this.baseURI = baseURI;
 	}
 
 	public void addAuthorizationHeader() {
-		specBuilder.addHeader("Authorization", "Bearer " + BEARER_TOKEN);
+		specBuilder.addHeader("Authorization", "Bearer " + prop.getProperty("token"));
 	}
 
 	public void setRequestContentType(String contentType) {
@@ -43,13 +45,13 @@ public class RestClient {
 	}
 
 	private RequestSpecification createRequestSpec() {
-		specBuilder.setBaseUri(BASE_URI);
+		specBuilder.setBaseUri(baseURI);
 		addAuthorizationHeader();
 		return specBuilder.build();
 	}
 
 	private RequestSpecification createRequestSpec(Map<String, String> headersMp) {
-		specBuilder.setBaseUri(BASE_URI);
+		specBuilder.setBaseUri(baseURI);
 		addAuthorizationHeader();
 		if (headersMp != null) {
 			specBuilder.addHeaders(headersMp);
@@ -58,7 +60,7 @@ public class RestClient {
 	}
 
 	private RequestSpecification createRequestSpec(Map<String, String> headersMp, Map<String, String> querParams) {
-		specBuilder.setBaseUri(BASE_URI);
+		specBuilder.setBaseUri(baseURI);
 		addAuthorizationHeader();
 		if (querParams != null) {
 			specBuilder.addQueryParams(querParams);
@@ -67,19 +69,18 @@ public class RestClient {
 	}
 
 	private RequestSpecification createRequestSpec(Object requestBody, String contentType) {
-		specBuilder.setBaseUri(BASE_URI);
+		specBuilder.setBaseUri(baseURI);
 		addAuthorizationHeader();
 		setRequestContentType(contentType);
 		if (requestBody != null) {
 			specBuilder.setBody(requestBody);
 		}
-
 		return specBuilder.build();
 	}
 
 	private RequestSpecification createRequestSpec(Object requestBody, String contentType,
 			Map<String, String> headersMap) {
-		specBuilder.setBaseUri(BASE_URI);
+		specBuilder.setBaseUri(baseURI);
 		addAuthorizationHeader();
 		setRequestContentType(contentType);
 		if (headersMap != null) {
@@ -167,11 +168,9 @@ public class RestClient {
 
 	// DELETE Method
 	public Response delete(String serviceURL, boolean log) {
-		if(log)
-		{
-			 return RestAssured.given(createRequestSpec()).log().all()
-			.delete(serviceURL);
+		if (log) {
+			return RestAssured.given(createRequestSpec()).log().all().delete(serviceURL);
 		}
-		 return RestAssured.given(createRequestSpec()).delete(serviceURL);
+		return RestAssured.given(createRequestSpec()).delete(serviceURL);
 	}
 }
