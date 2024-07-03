@@ -17,14 +17,14 @@ public class GetUserTest extends BaseTest {
 		restclient.get("/public/v2/users", true).then().log().all().assertThat().statusCode(200);
 	}
 
-	@Test(enabled=true)
+	@Test(enabled = true)
 	public void getParticularUserTest() {
 		restclient = new RestClient(prop, baseURI);
 		restclient.get("/public/v2/users/7004555", false).then().log().all().assertThat().statusCode(200).and()
 				.body("id", equalTo(7004555));
 	}
 
-	@Test (enabled=true)
+	@Test(enabled = true)
 	public void getUserTestwithQueryParams() {
 		restclient = new RestClient(prop, baseURI);
 		Map<String, String> queryParams = new HashMap<String, String>();

@@ -12,12 +12,13 @@ public class CreateUser extends BaseTest {
 	@Test
 	public void createUserTest() {
 		UserRequest usereq = new UserRequest("nancy", StringUtils.getRandomEmails(), "female", "active");
-		//RestClient restclient1 = new RestClient();
-		Integer userID = restclient1.post("/public/v2/users", "json", usereq, true).then().log().all().assertThat()
+		// RestClient restclient1 = new RestClient();
+		Integer userID = restclient.post("/public/v2/users", "json", usereq, true).then().log().all().assertThat()
 				.statusCode(201).extract().path("id");
 		System.out.println("User ID is:" + userID);
-		//Get the same user
-		//RestClient restclient2 = new RestClient();
-		restclient2.get("/public/v2/users/" + userID, true).then().log().all().assertThat().statusCode(200).assertThat().body("id", equalTo(userID));
+		// Get the same user
+		RestClient restclient2 = new RestClient(prop, baseURI);
+		restclient2.get("/public/v2/users/" + userID, true).then().log().all().assertThat().statusCode(200).assertThat()
+				.body("id", equalTo(userID));
 	}
 }

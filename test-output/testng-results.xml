@@ -1,36 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-03T17:15:05 IST" name="API Regression Suite" finished-at="2024-07-03T17:15:13 IST" duration-ms="7632">
+  <suite started-at="2024-07-03T17:34:27 IST" name="Default suite" finished-at="2024-07-03T17:34:28 IST" duration-ms="244">
     <groups>
     </groups>
-    <test started-at="2024-07-03T17:15:05 IST" name="Go Rest API Test" finished-at="2024-07-03T17:15:13 IST" duration-ms="7632">
-      <class name="api.gorest.tests.GetUserTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:api.gorest.tests.GetUserTest@55de24cc]" started-at="2024-07-03T17:15:05 IST" name="setUp" finished-at="2024-07-03T17:15:06 IST" duration-ms="544" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://gorest.co.in]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2024-07-03T17:34:27 IST" name="Default test" finished-at="2024-07-03T17:34:28 IST" duration-ms="244">
+      <class name="api.gorest.tests.CreateUser">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:api.gorest.tests.CreateUser@3feb2dda]" started-at="2024-07-03T17:34:27 IST" name="setUp" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1720008267918" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'baseURI' is required by BeforeTest on method setUp but has not been marked @Optional or defined
+in C:\Users\d97qr\AppData\Local\Temp\testng-eclipse--1159806051\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'baseURI' is required by BeforeTest on method setUp but has not been marked @Optional or defined
+in C:\Users\d97qr\AppData\Local\Temp\testng-eclipse--1159806051\testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:264)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
+at org.testng.internal.Parameters.createParameters(Parameters.java:690)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:655)
+at org.testng.TestRunner.beforeRun(TestRunner.java:644)
+at org.testng.TestRunner.run(TestRunner.java:610)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="getAllUsersTest()[pri:0, instance:api.gorest.tests.GetUserTest@55de24cc]" started-at="2024-07-03T17:15:06 IST" name="getAllUsersTest" finished-at="2024-07-03T17:15:09 IST" duration-ms="3387" status="PASS">
+        <test-method signature="createUserTest()[pri:0, instance:api.gorest.tests.CreateUser@3feb2dda]" started-at="2024-07-03T17:34:28 IST" name="createUserTest" finished-at="2024-07-03T17:34:28 IST" duration-ms="0" status="SKIP">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'baseURI' is required by BeforeTest on method setUp but has not been marked @Optional or defined
+in C:\Users\d97qr\AppData\Local\Temp\testng-eclipse--1159806051\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'baseURI' is required by BeforeTest on method setUp but has not been marked @Optional or defined
+in C:\Users\d97qr\AppData\Local\Temp\testng-eclipse--1159806051\testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:264)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
+at org.testng.internal.Parameters.createParameters(Parameters.java:690)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:655)
+at org.testng.TestRunner.beforeRun(TestRunner.java:644)
+at org.testng.TestRunner.run(TestRunner.java:610)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getAllUsersTest -->
-        <test-method signature="getParticularUserTest()[pri:0, instance:api.gorest.tests.GetUserTest@55de24cc]" started-at="2024-07-03T17:15:09 IST" name="getParticularUserTest" finished-at="2024-07-03T17:15:12 IST" duration-ms="2297" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getParticularUserTest -->
-        <test-method signature="getUserTestwithQueryParams()[pri:0, instance:api.gorest.tests.GetUserTest@55de24cc]" started-at="2024-07-03T17:15:12 IST" name="getUserTestwithQueryParams" finished-at="2024-07-03T17:15:13 IST" duration-ms="1227" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getUserTestwithQueryParams -->
-      </class> <!-- api.gorest.tests.GetUserTest -->
-    </test> <!-- Go Rest API Test -->
-  </suite> <!-- API Regression Suite -->
+        </test-method> <!-- createUserTest -->
+      </class> <!-- api.gorest.tests.CreateUser -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

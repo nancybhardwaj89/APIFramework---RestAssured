@@ -8,13 +8,13 @@
 		<classes>
 			<class name="api.gorest.tests.GetUserTest" />
 		</classes>
-		
-	<!--</test>
+
+	</test>
 	<test name="Go Rest API Create User Test">
 		<parameter name="baseURI" value="https://gorest.co.in" />
 
 		<classes>
-			<class name="api.gorest.tests.CreateUserTest" />
-		</classes> -->
-	</test> 
+			<class name="api.gorest.tests.CreateUser" />
+		</classes>
+	</test>
 </suite>

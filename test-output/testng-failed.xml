@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="api.gorest.tests.GetUserTest">
+      <class name="api.gorest.tests.CreateUser">
         <methods>
+          <include name="createUserTest"/>
           <include name="setUp"/>
-          <include name="getAllUsersTest"/>
         </methods>
-      </class> <!-- api.gorest.tests.GetUserTest -->
+      </class> <!-- api.gorest.tests.CreateUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
