@@ -11,6 +11,9 @@ import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 
 public class BaseTest {
+	
+	//Service URL's
+	public static final String GOREST_ENDPOINT = "public/v2/users";
 
 	protected ConfigManager config;
 	protected Properties prop;
@@ -24,6 +27,6 @@ public class BaseTest {
 		config = new ConfigManager();
 		prop = config.initProp();
 		this.baseURI = baseURI;
-		restclient = new RestClient(prop, baseURI);
+		//restclient = new RestClient(prop, baseURI);
 	}
 }

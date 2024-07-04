@@ -1,0 +1,1 @@
+{"uuid":"0b9fe362-f15b-414c-a714-c3fb14e3d978","name":"Go Rest API Create User Test","children":["0a30e9be-aea8-4516-8e2d-640bfe39b805"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1720108047769,"stop":1720108047770}],"afters":[],"start":1720108047768,"stop":1720108050003}
